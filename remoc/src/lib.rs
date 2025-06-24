@@ -1,4 +1,4 @@
-#![cfg_attr(not(feature = "js"), forbid(unsafe_code))]
+#![cfg_attr(all(not(feature = "js"), not(feature = "wstd")), forbid(unsafe_code))]
 #![cfg_attr(feature = "js", deny(unsafe_code))]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]

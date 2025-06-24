@@ -19,7 +19,8 @@ exclude = ["examples"]
 
 
 # for WASI on the web (wasm32-wasip1-threads target with `js` feature):
-# [patch.crates-io]
+[patch.crates-io]
+wstd = { git = "https://github.com/SilverMira/wstd.git", branch = "executor_spawn" }
 # js-sys = { git = "https://github.com/rust-wasi-web/wasm-bindgen.git" }
 # web-sys = { git = "https://github.com/rust-wasi-web/wasm-bindgen.git" }
 # wasm-bindgen = { git = "https://github.com/rust-wasi-web/wasm-bindgen.git" }

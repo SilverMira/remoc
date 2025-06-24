@@ -3,10 +3,10 @@
 //! On native platforms this uses Tokio.
 //! On JavaScript this executes Futures as Promises.
 
-#[cfg(not(feature = "js"))]
+#[cfg(all(not(feature = "js"), not(feature = "wstd")))]
 mod native;
 
-#[cfg(not(feature = "js"))]
+#[cfg(all(not(feature = "js"), not(feature = "wstd")))]
 pub use native::*;
 
 #[cfg(feature = "js")]
@@ -14,6 +14,12 @@ mod js;
 
 #[cfg(feature = "js")]
 pub use js::*;
+
+#[cfg(feature = "wstd")]
+mod wstd;
+
+#[cfg(feature = "wstd")]
+pub use wstd::*;
 
 pub use task::spawn;
 
